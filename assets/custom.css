@@ -1,0 +1,86 @@
+/* Styles de la navbar moderne Soft Transports */
+
+/* Masquer l'ancienne navbar React (header direct dans body) */
+body > header { display: none !important; }
+
+/* Base */
+.st-navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  background-color: hsl(var(--background) / 0.98);
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.st-nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Left */
+.st-nav-left { display: flex; align-items: center; gap: 12px; }
+.st-logo { width: 56px; height: 56px; object-fit: contain; border-radius: 8px; background: #fff; padding: 2px; }
+.st-brand { display: none; }
+.st-title { font-weight: 800; letter-spacing: -0.01em; color: hsl(var(--secondary)); font-size: 1rem; }
+.st-sub { color: hsl(var(--muted-foreground)); font-size: 0.7rem; }
+
+/* Right */
+.st-nav-right { display: none; align-items: center; gap: 1.25rem; }
+.st-link {
+  color: hsl(var(--foreground) / 0.8);
+  font-size: 0.95rem;
+  font-weight: 600;
+  position: relative;
+}
+.st-link:hover { color: hsl(var(--primary)); }
+.st-link::after {
+  content: "";
+  position: absolute; left: 0; bottom: -4px;
+  width: 0; height: 2px; background: hsl(var(--primary));
+  transition: width .25s ease;
+}
+.st-link:hover::after { width: 100%; }
+
+.st-phone {
+  display: none;
+  padding: 8px 12px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px;
+  font-weight: 700;
+}
+.st-phone:hover { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
+
+/* Burger */
+.st-burger {
+  display: inline-flex;
+  background: transparent;
+  border: 1px solid hsl(var(--border));
+  border-radius: 8px; color: hsl(var(--foreground));
+  padding: 6px 10px; font-size: 18px;
+}
+
+/* Mobile menu */
+#st-menu { display: none; }
+#st-menu.open { display: flex; flex-direction: column; position: absolute; top: 80px; right: 12px; left: 12px; background: hsl(var(--background) / 0.98); border: 1px solid hsl(var(--border)); border-radius: 12px; padding: 16px; gap: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+#st-menu.open .st-phone { display: flex; justify-content: center; }
+
+/* Responsif */
+@media (min-width: 640px) {
+  .st-brand { display: block; }
+}
+@media (min-width: 1024px) {
+  .st-burger { display: none; }
+  .st-nav-right { display: flex; }
+  .st-phone { display: inline-flex; align-items: center; gap: 8px; }
+  #st-menu { display: flex; position: static; background: transparent; border: 0; border-radius: 0; padding: 0; gap: 1.25rem; box-shadow: none; }
+}
+
+/* Décalage du contenu pour la navbar fixe */
+#root { padding-top: 80px; }

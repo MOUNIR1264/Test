@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Soft Transports - Déménagement paris & Île-de-France | Devis Gratuit 24h/7j</title>
+    <meta name="description" content="Soft Transports : Expert en déménagement résidentiel et professionnel à Paris et Île-de-France. Équipe qualifiée, transport sécurisé avec assurance tous risques, devis gratuit sous 24h. Service complet de déménagement, emballage, montage et démontage de meubles. Intervention rapide dans les 8 départements franciliens." />
+    <meta name="keywords" content="déménagement paris, déménageur paris, déménagement Île-de-France, transport déménagement, devis déménagement gratuit, déménagement professionnel, déménagement résidentiel, déménagement 75, déménagement 92, déménagement 93, déménagement 94, déménagement pas cher paris, société déménagement paris, entreprise déménagement, déménagement sécurisé, assurance déménagement" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Soft Transports - Déménagement paris & Île-de-France" />
+    <meta property="og:description" content="Expert en déménagement à paris et Île-de-France. Devis gratuit, transport sécurisé, équipe professionnelle disponible 24h/7j." />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Soft Transports - Déménagement paris & Île-de-France" />
+    <meta name="twitter:description" content="Expert en déménagement à paris et Île-de-France. Devis gratuit, transport sécurisé, équipe professionnelle." />
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Soft Transports" />
+    <meta name="geo.region" content="FR-IDF" />
+    <meta name="geo.placename" content="Paris, Île-de-France" />
+    <link rel="canonical" href="https://www.softtransports.fr" />
+
+    <!-- Lien vers tes fichiers CSS -->
+    <link rel="stylesheet" href="assets/index.css" />
+    <link rel="stylesheet" href="assets/custom.css" />
+
+    <!-- Lien vers ton script JS -->
+    <script src="assets/index.js" defer></script>
+    <link rel="icon" type="image/png" href="assets/favicon.PNG">
+
+
+  </head>
+  <body>
+    <!-- Navbar moderne injectée (remplace visuellement la navbar du bundle) -->
+    <nav class="st-navbar">
+      <div class="st-nav-container">
+        <div class="st-nav-left">
+          <img src="assets/softtt.PNG" alt="Soft Transports" class="st-logo" />
+          <div class="st-brand">
+            <div class="st-title">SOFT TRANSPORTS</div>
+            <div class="st-sub">Expert Déménagement paris & Île-de-France</div>
+          </div>
+        </div>
+        <button class="st-burger" aria-label="Menu" id="st-burger">☰</button>
+        <div class="st-nav-right" id="st-menu">
+          <a href="#services" class="st-link">Services</a>
+          <a href="#devis" class="st-link" id="st-devis">Devis</a>
+          <a href="tel:+33758562250" class="st-phone">07 58 56 22 50</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Script léger pour le menu mobile et le scroll -->
+    <script>
+      (function() {
+        const burger = document.getElementById('st-burger');
+        const menu = document.getElementById('st-menu');
+        if (burger && menu) {
+          burger.addEventListener('click', function() {
+            menu.classList.toggle('open');
+          });
+        }
+        const devisBtn = document.getElementById('st-devis');
+        if (devisBtn) {
+          devisBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const el = document.getElementById('devis');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          });
+        }
+      })();
+    </script>
+
+    <div id="root"></div>
+  </body>
+</html>
